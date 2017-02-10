@@ -3,20 +3,20 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-    <var name="personForm" class="spring.workshop.webflow.beans.PersonFormBean"/>
+    <var name="personBean" class="com.enginizer.beans.PersonBean"/>
 
     <on-start>
-        <evaluate expression="personController.createNewPersonFormBean()" result="personForm"/>
+        <evaluate expression="personController.createNewPersonFormBean()" result="personBean"/>
     </on-start>
 
-    <view-state id="create" model="personForm">
+    <view-state id="create" model="personBean">
         <transition on="save" to="saveAction"/>
         <transition on="cancel" to="back"/>
         <transition on="saved" to="back"/>
     </view-state>
 
     <action-state id="saveAction">
-        <evaluate expression="personController.savePerson(personForm)" />
+        <evaluate expression="personController.savePerson(personBean)" />
         <transition on-exception="javax.validation.ConstraintViolationException" to="back"/>
         <transition on="success" to="back"/>
     </action-state>
