@@ -1,7 +1,9 @@
-Spring Webflow JSF
+Enginizer JSF
 ==================
 
-This project shows how to configure Spring WebFlow with JSF and PrimeFaces with Spring Boot.  
-No legacy web.xml is required.  
-All is configured using java code. Most part is done by spring boot autoconfiguration.
-
+Starter project for an app, using the folowing technologies:
+java 1.8
+spring-boot-1.4.0-RELEASE
+spring-webflow-2.4.4-RELEASE
+jsf-2.2.13
+primefaces-6.0
